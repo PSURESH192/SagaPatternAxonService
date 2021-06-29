@@ -47,7 +47,7 @@ public class HotelAggregate {
 
     @EventSourcingHandler
     protected void on(HotelStatusUpdatedEvent hotelStatusUpdatedEvent){
-        this.hotelId = hotelId;
+        this.hotelId = hotelStatusUpdatedEvent.hotelId;
         this.bookingStatus = BookingStatus.valueOf(hotelStatusUpdatedEvent.bookingStatus);
     }
 }

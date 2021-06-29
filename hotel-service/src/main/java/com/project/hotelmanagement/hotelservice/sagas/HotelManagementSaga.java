@@ -35,7 +35,7 @@ public class HotelManagementSaga {
 
         SagaLifecycle.associateWith("paymentId", paymentId);
 
-        logger.info("hotelId : "+hotelCreatedEvent.hotelId);
+        logger.info("hotelId : {}",hotelCreatedEvent.hotelId);
 
         commandGateway.send(new CreateInvoiceCommand(paymentId,hotelCreatedEvent.hotelId));
     }
@@ -47,7 +47,7 @@ public class HotelManagementSaga {
 
         SagaLifecycle.associateWith("reservationId", reservationId);
 
-        logger.info("paymentId : "+invoiceCreatedEvent.paymentId);
+        logger.info("paymentId : {}",invoiceCreatedEvent.paymentId);
 
         commandGateway.send(new CreateReservationCommand(reservationId,invoiceCreatedEvent.hotelId,invoiceCreatedEvent.paymentId));
     }
