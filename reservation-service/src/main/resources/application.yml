@@ -1,0 +1,16 @@
+server.port: 9017
+
+spring.application.name: SAGA-RESERVATION-SERVICE
+
+spring.datasource.url: jdbc:postgresql://localhost:5432/SagaReservationService
+spring.datasource.driverClassName: org.postgresql.Driver
+spring.datasource.username: postgres
+spring.datasource.password: password
+spring.jpa.show-sql: true
+
+spring.jpa.hibernate.ddl-auto: update
+
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+spring.data.jpa.repositories.enabled: true
+logging.level.org.springframework.web: INFO
+
